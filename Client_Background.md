@@ -1,4 +1,9 @@
 ##  **Olist’s Business Model**
+
+<p align="center">
+  <img src="https://github.com/Brunda-nb/Olist-Ecommerce/blob/main/Data%20Schema/Logo.png?raw=true" width="200">
+</p>
+
 Olist is a Brazilian departmental store (marketplace) that operates in e-commerce segment, but is not an e-commerce itself (as she says). It operates as a **SaaS (Software as a Service) technology company since 2015.** It offers a marketplace solution (of e-commerce segment) to shopkeepers of all sizes (and for most segments) to increase their sales whether they have online presence or not.
 
 ##  **Olist’s Solution**
