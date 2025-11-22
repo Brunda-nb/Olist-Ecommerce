@@ -47,119 +47,195 @@ BUSINESS GOAL
             ├── Repeat Customer Rate
             └── Lifetime Value (LTV) 
 
-# 📊 Olist E-Commerce KPI Tree
+# 📊 Olist KPI Tree (Based on Full Business Questions)
 
-A KPI Tree breaking down the overall business goal → core KPIs → diagnostic metrics.  
-This helps structure the entire analytics project and guide the EDA, funnel analysis, and dashboards.
-
----
-
-## 🎯 **Top-Level Business Goal**
-### **Maximize Gross Merchandise Value (GMV)**  
-GMV = Total Orders × Average Order Value (AOV)
+A unified KPI Tree mapping each business question → KPI category → diagnostic metrics.  
+Use this to structure SQL scripts, EDA sections, dashboard pages, and your final business insights.
 
 ---
 
-## 🌿 **KPI Tree Structure**
+# 🎯 TOP-LEVEL GOAL  
+## **Increase Total Revenue & Customer Satisfaction**  
+Supported by: Conversion, Delivery Efficiency, Payment Behavior, Customer Retention, Product Performance.
 
 ---
 
-## 1️⃣ **Total Orders**
-Total number of completed purchases.
+# 🌿 FULL KPI TREE
 
-### 🔹 1.1 Customer Growth
-- **New Customers**
-- **Returning Customers**
-- **Customer Acquisition Rate**
-- **Churn Rate**
+---
 
-### 🔹 1.2 Order Frequency
-- **Orders per Customer**
+# 1️⃣ Conversion Funnel KPIs  
+Track the customer journey from order → payment → delivery.
+
+### **Primary KPIs**
+- **Overall Conversion Rate**
+- **Stage-wise Conversion**  
+  - Order → Payment  
+  - Payment → Shipment  
+  - Shipment → Delivery
+
+### **Diagnostic Metrics**
+- Funnel drop-off rate (payment pending, failed, cancellations)
+- Avg time spent at each funnel stage  
+  - Order to Payment  
+  - Payment to Shipment  
+  - Shipment to Delivery
+- Conversion rate by product category
+- Conversion rate by region
+- Cart abandonment indicators (inferred)
+
+---
+
+# 2️⃣ Logistics & Delivery KPIs  
+Measure delivery performance, regional issues, and supply chain efficiency.
+
+### **Primary KPIs**
+- **On-Time Delivery %**
+- **Average Actual vs Estimated Delivery Time**
+- **Delivery Delay Rate**
+- **Order Delivery SLA Compliance**
+
+### **Diagnostic Metrics**
+- Delay rate by:
+  - State / City
+  - Seller
+  - Product category
+  - Carrier (if inferred)
+- Delivery delay impact on:
+  - Review Scores  
+  - Cancellations  
+  - Refunds
+- Hub/warehouse processing time (based on timestamps)
+
+---
+
+# 3️⃣ Payment Behavior & Revenue KPIs  
+Focus on payment patterns, profitability and revenue impact.
+
+### **Primary KPIs**
+- **Popular Payment Methods Share**
+- **Installment Usage %**
+- **Average Installment Count**
+- **Total Revenue**
+- **Net Revenue (after cancellations/returns)**
+
+### **Diagnostic Metrics**
+- Installments vs AOV correlation  
+- Payment method preferences by state  
+- Installment behavior by order value  
+- Category-wise revenue  
+- Revenue loss due to:
+  - Canceled orders  
+  - Returned/refunded orders  
+- High-value vs low-value customer segments
+
+---
+
+# 4️⃣ Customer Experience & Review KPIs  
+Understand quality perception and customer sentiment.
+
+### **Primary KPIs**
+- **Average Review Score**
+- **5-Star Rating %**
+- **1–2 Star Rate**
+- **Delivery Time → Review Score Correlation**
+
+### **Diagnostic Metrics**
+- Low-score root causes:
+  - Delivery delays  
+  - Product quality issues (category-level)  
+  - Seller behavior  
+- Review distribution across:
+  - Product categories  
+  - Sellers  
+  - Regions  
+- Seller satisfaction leaderboard
+
+---
+
+# 5️⃣ Customer Segmentation & Retention KPIs  
+Track user lifecycle, loyalty, and repeat behavior.
+
+### **Primary KPIs**
 - **Repeat Purchase Rate**
+- **Customer Retention Rate**
+- **Average Time Between Purchases**
 - **Customer Lifetime Orders**
 
-### 🔹 1.3 Conversion Funnel Metrics
-**Traffic → Add to Cart → Checkout → Payment → Order Placed**
-
-- **Product Page Views**
-- **Add-to-Cart Rate**
-- **Checkout Initiation Rate**
-- **Payment Success Rate**
-- **Cart Abandonment Rate**
-- **Checkout Abandonment Rate**
-
----
-
-## 2️⃣ **Average Order Value (AOV)**
-AOV = Revenue / Total Orders
-
-### 🔸 2.1 Basket Impact
-- **Average Basket Size (items/order)**
-- **Average Price Per Item**
-
-### 🔸 2.2 Category Mix
-- **High-ticket vs Low-ticket category share**
-- **Category contribution to revenue**
-
-### 🔸 2.3 Discount & Pricing
-- **Discount Rate**
-- **Effective Selling Price**
-- **Revenue Loss due to Discounts**
+### **Diagnostic Metrics**
+- Segments by:
+  - Geography  
+  - Category preference  
+  - Payment behavior  
+  - Order value tiers  
+- Categories driving the most repeat orders  
+- High-value vs low-value customer cohorts  
+- New vs returning customer ratio
 
 ---
 
-## 3️⃣ **Operational KPIs (Supporting GMV)**
+# 6️⃣ Product Category & Sales KPIs  
+Analyze category-level performance and profitability.
 
----
-
-## 3.1 🚚 Delivery & Logistics
-Directly influences cancellations & customer satisfaction.
-
-- **Delivery Time**
-- **Delay Rate**
-- **On-Time Delivery %**
-- **Carrier Performance Score**
-- **Hub Processing Time**
-
----
-
-## 3.2 🔁 Order Cancellations & Returns
-Cancellations reduce GMV, returns reduce net revenue.
-
-- **Cancellation Rate**
-- **Return Rate**
-- **Refund Time**
-- **Cancellation Reasons (Customer / Seller / Payment)**
-
----
-
-## 3.3 ⭐ Customer Experience
-Higher satisfaction → higher repeat purchases.
-
-- **Customer Review Score**
-- **NPS (if available)**
-- **Complaint Rate**
-- **Support Ticket Time-to-Resolution**
-
----
-
-## 4️⃣ **Financial KPIs**
-
----
-
-## 4.1 💰 Revenue Metrics
-- **Gross Revenue**
-- **Net Revenue (after cancellations/returns)**
+### **Primary KPIs**
+- **Order Volume by Category**
 - **Revenue by Category**
-- **Revenue by State / City**
+- **Category Conversion Rate**
+- **Category Cancellation Rate**
+
+### **Diagnostic Metrics**
+- Seasonal order trends (month/quarter)
+- High refund/return categories
+- Top sellers and underperforming sellers for each category
+- Stock/out-of-stock inference (via lead times)
 
 ---
 
-## 4.2 💸 Cost Metrics
-Not fully available in Olist dataset, but implied:
+# 7️⃣ Loss, Risk & Operational Inefficiency KPIs  
+Identify hidden financial impact and operational failures.
 
-- **Logistics Cost (inferred)**
-- **Marketing Cost (if doing advanced projects)**
+### **Primary KPIs**
+- **Loss Due to Late Deliveries (estimated)**
+- **Loss Due to Cancellations**
+- **Loss Due to Returns/Refunds**
+- **Operational Risk Score (composite)**
+
+### **Diagnostic Metrics**
+- Sellers with unusually high cancellation rates  
+- Regions with consistent delivery bottlenecks  
+- Time-to-ship delays  
+- Payment failure & pending statuses  
+- SLA breach patterns over time
 
 ---
 
+# 8️⃣ Value-Added Predictive/Advanced KPIs  
+For machine-learning or advanced analytics layers.
+
+### **Primary KPIs**
+- **Optimal Delivery Time Threshold** (maximizes 5-star reviews)
+- **5-Star Rating Predictive Variables**
+- **Installments → Conversion Impact**
+- **Segments Most Sensitive to Delivery Delays**
+
+### **Diagnostic Metrics**
+- Feature importance for review predictions  
+- Delivery sensitivity scores by customer cohort  
+- Installment elasticity (conversion uplift from more options)  
+- Churn/retention prediction signals
+
+---
+
+# 🧭 How to Use This Tree
+- Map each KPI to SQL queries in your EDA notebook.
+- Build dashboard tabs for:
+  - Funnel  
+  - Delivery  
+  - Payments  
+  - Revenue  
+  - Reviews  
+  - Categories  
+  - Customers  
+- Use the tree to structure the **Insights & Recommendations** section 
+
+---
