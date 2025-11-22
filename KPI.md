@@ -132,25 +132,6 @@ Improve customer experience, increase revenue, and reduce operational inefficien
             ├── LTV by Segment
             ├── LTV by Category Preference
             └── Churn-prone Customer Groups
-├── 1. CONVERSION & FUNNEL PERFORMANCE
-│   ├── 1.1 Funnel Volume Metrics
-│   │   ├── Orders Placed
-│   │   ├── Payments Approved
-│   │   ├── Orders Shipped
-│   │   ├── Orders Delivered
-│   │   └── Orders Reviewed
-│   │
-│   ├── 1.2 Funnel Efficiency Metrics
-│   │   ├── Conversion Rate (Placed → Delivered)
-│   │   ├── Stage-wise Drop-off Rate
-│   │   ├── % Cancellations
-│   │   └── Time Taken per Stage (Order → Payment → Ship → Delivery)
-│   │
-│   └── 1.3 Category-wise Funnel Insights
-│       ├── Category Conversion Rate
-│       ├── Category Drop-off Rate
-│       └── Category Funnel Bottlenecks
-
 
 # 📊 Olist KPI Tree (Based on Full Business Questions)
 
